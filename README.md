@@ -17,8 +17,8 @@ O objetivo e onde os usuários pagam uma taxa mensal para acessar uma vasta bibl
 
 ## Autores
 
-- [Yslane](https://www.github.com/octokatherine)
-- [Hannah](https://ww.gitgub.com/octokatherine)
+- [Yslane](https://www.github.com/grupo001efg)
+- [Hannah](https://ww.gitgub.com/grupo001efg)
 
 
 ## Funcionalidades

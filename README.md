@@ -5,7 +5,7 @@
 _ SOBRE ESSE PROJETO:
 
 
-Esse site foi desenvolvido para todos os usuários que são amantes de serie de diversos gêneros. Além da grande diversidade de series queremos que você clinte e usuário tenha uma incrível experiência usando esse site. Se divirta assistindo e vivendo novas experiência por meio das series.
+Esse site foi desenvolvido para todos os usuários que são amantes de série de diversos gêneros.  Aqui, você encontra um catálogo incrível de títulos, desde os maiores sucessos até as pérolas escondidas que você ainda não conhece. Nossa plataforma foi criada pensando em você, oferecendo uma experiência intuitiva, personalizada e repleta de recomendações feitas sob medida para os seus gostos. Com conteúdos atualizados, críticas especializadas e uma comunidade apaixonada por séries, você vai estar sempre à frente quando o assunto for maratonas e estreias. Prepare-se para explorar e redescobrir o melhor do universo das séries, tudo com a qualidade e o carinho que só o nosso site pode oferecer!
 
 
 ## Autores

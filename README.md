@@ -48,6 +48,15 @@ _ document.getElementById('loginForm').addEventListener('submit', function(e){
 _<iframe width="100%" height="200" src="https://www.youtube.com/embed/Et74uifVQHQ?si=0m1eikNFTEsiwpLW" title="YouTube video player" frameborder="0"  allowfullscreen></iframe>
 
 
+## UTILIZADO 
+
+_Chromebook: utilizado na pesquisa e colaboração na criação do site.
+
+_Projeto: utilizado na projeção do projeto final.
+
+_Slide: utilizado na apresentação para visualização de todo o projeto do site.
+
+
 ## Referência
 
  - [Netflix](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)

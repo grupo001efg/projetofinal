@@ -34,9 +34,17 @@ O objetivo e onde os usuários pagam uma taxa mensal para acessar uma vasta bibl
 
 ## Apresentação 
 
-- O HTML 
-- A estrutura CSS
-- O arquivo JS
+No HTML usamos diversas tags, no entanto as tags mais importantes que ajudaram a compor nosso site foram as seguintes:
+
+_ <button></button>: Teve como função executar uma determinada ação ao receber um clique do usuário.
+_ iframe: E uma tag que tem como função inserir conteúdos externos  em uma página.
+_LoginForm: Foi criada para  um formulário de Login permintindo a entrada do usuário.
+
+_A estrutura CSS Ultilizamos o site de apoio Bootstrap que contém todas as ferramentas disponível  pre-pronto para uma boa criação de estrutura CSS.
+
+_ document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+_<iframe width="100%" height="200" src="https://www.youtube.com/embed/Et74uifVQHQ?si=0m1eikNFTEsiwpLW" title="YouTube video player" frameborder="0"  allowfullscreen></iframe>
 
 
 ## Referência

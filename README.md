@@ -3,6 +3,8 @@
 # SERIEFLIX
 
 _ SOBRE ESSE PROJETO:
+
+
 Esse site foi desenvolvido para todos os usuarios que são amantes de serie de diversos gêneros. Além da grande diversidade de series queremos que você clinte e usuario tenha uma incrível experiência usando esse site. Se divirta assistindo e vivendo novas experiência por meio das series.
 
 

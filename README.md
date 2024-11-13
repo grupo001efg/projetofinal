@@ -56,6 +56,8 @@ _Projeto: utilizado na projeção do projeto final.
 
 _Slide: utilizado na apresentação para visualização de todo o projeto do site.
 
+_Github e Gitdev
+
 
 ## Referência
 

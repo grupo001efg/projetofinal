@@ -61,6 +61,6 @@ _Github e Gitdev
 
 ## Referência
 
- - [Netflix](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+ - [Netflix](https://netflix.com)
  
 

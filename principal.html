@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Série e Filmes </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+          background-image: url('img/fundo.jpg'); 
+          background-size: cover;
+          background-position: center;
+          color: #fff;
+        }
+        .overlay {
+          background-color: rgba(0, 0, 0, 0.7);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .content {
+          position: relative;
+          z-index: 10;
+          text-align: center;
+          padding-top: 20px;
+        }
+      </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+    <!--Conteúdo Principal-->
+    <div class="container content">
+        <h1 class="display-4">Bem-vindo á Plataforma de Séries e Filmes</h1>
+        <p>Assista séries e filmes exclusivos.</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+        <button class="btn btn-light" onclick="showAvailableSeries()">Ver Série e Filmes</button>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#paymentModal">Pagamento</button>
+    </div>
+    <!--Modal de Login-->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuário</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal de Exibição de Série-->
+    <div class="modal fade" id="serieModal" tabindex="-1" aria-labelledby="serieModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serieModalLabel">Título da Série</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="serieDescription">Descrição da série...</p>
+                    <iframe id="serieVideo" width="100%" height="400" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <p>Visualizações: <span id="serieViews">0</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal de Pagamento-->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Pagamento da Mensalidade</h5>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="cardNumber">Número do Cartão</label>
+                            <input type="text" class="form-control" id="cardNumber" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="expirationDate" class="form-label">Data de Expiração</label>
+                            <input type="text" class="form-control" id="expirationDate" placeholder="MM/YY" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cvv" class="form-label">CVV</label>
+                            <input type="text" class="form-control" id="cvv" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Pagar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Lista de Séries e Filmes-->
+    <div class="container content mt-5" id="seriesList" style="display: none;">
+        <h2>Séries e Filmes Disponíveis</h2>
+        <div class="row" id="seriesContainer"></div>
+    </div>
+
+    <!--Ranking das Séries Mais Assistidas-->
+    <div class="container content mt-5" id="rankingList" style="display: none;">
+        <h2>Ranking das Séries Mais Assistidas</h2>
+        <ul id="rankingContainer" class="list-group"></ul>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const series = [
+    { id: 1, title: "Série A", description: "Descrição da Série A", videoUrl: "https://www.youtube.com/embed/VIDEO_ID_1", views: 0 },
+    { id: 2, title: "Série B", description: "Descrição da Série B", videoUrl: "https://www.youtube.com/embed/VIDEO_ID_2", views: 0 },
+    { id: 3, title: "Série C", description: "Descrição da Série C", videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3", views: 0 },
+  ];
+
+  function showAvailableSeries() {
+    document.getElementById('seriesList').style.display = 'block';
+    const container = document.getElementById("seriesContainer");
+    container.innerHTML = "";
+    series.forEach(s => {
+      container.innerHTML += `
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">${s.title}</h5>
+              <p class="card-text">${s.description}</p>
+              <button class="btn btn-primary" onclick="showSerie(${s.id})">Assistir</button>
+            </div>
+          </div>
+        </div>`;
+    });
+  }
+
+  function showSerie(id) {
+    const serie = series.find(s => s.id === id);
+    if (serie) {
+      document.getElementById("serieModalLabel").innerText = serie.title;
+      document.getElementById("serieDescription").innerText = serie.description;
+      document.getElementById("serieVideo").src = serie.videoUrl;
+      document.getElementById("serieViews").innerText = ++serie.views;
+      renderRanking();
+      const serieModal = new bootstrap.Modal(document.getElementById("serieModal"));
+      serieModal.show();
+    }
+  }
+
+  function renderRanking() {
+    series.sort((a, b) => b.views - a.views);
+    const rankingContainer = document.getElementById("rankingContainer");
+    rankingContainer.innerHTML = "";
+    series.forEach((serie, index) => {
+      rankingContainer.innerHTML += `<li class="list-group-item">${index + 1}. ${serie.title} - ${serie.views} visualizações</li>`;
+    });
+    document.getElementById('rankingList').style.display = 'block';
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRanking();
+  });
+</script>
+
+</body>
+</html>
